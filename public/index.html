@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .sensor-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .sensor-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .sensor-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        #status {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sensor Data Display</h1>
+    <div class="sensor-container">
+        <div class="sensor-card">
+            <h2>Light sensor data</h2>
+            <div id="sensor1" class="sensor-value">-</div>
+        </div>
+        <div class="sensor-card">
+            <h2>Voltage sensor data</h2>
+            <div id="sensor2" class="sensor-value">-</div>
+        </div>
+        <div class="sensor-card">
+            <h2>Current sensor data </h2>
+            <div id="sensor3" class="sensor-value">-</div>
+        </div>
+    </div>
+    <div id="status"></div>
+    <script src="script.js"></script>
+</body>
+</html>
