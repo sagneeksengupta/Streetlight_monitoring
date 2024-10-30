@@ -14,6 +14,7 @@ const uri = "mongodb://localhost:27017/sensorDB";
 const client = new MongoClient(uri);
 
 let sensorCollection;
+let latestSensorData = {};
 
 async function connectToMongo() {
     try {
@@ -42,14 +43,15 @@ connectToMongo();
 
 app.post('/data',async (req, res) => {
     console.log('Received data:', req.body);
-    sensorData = req.body;
-    res.json({ message: 'Data received successfully' });
+    // sensorData = req.body;
+    console.log('Data recieved succesfully');
     const sensorData = {
         timestamp: new Date(),
         sensor1: req.body.sensor1,
         sensor2: req.body.sensor2,
         sensor3: req.body.sensor3
     };
+    latestSensorData=sensorData;
     try {
         await sensorCollection.insertOne(sensorData);
         console.log("Data inserted into MongoDB");
@@ -61,7 +63,7 @@ app.post('/data',async (req, res) => {
 });
 
 app.get('/data', (req, res) => {
-    res.json(sensorData);
+    res.json(latestSensorData);
 });
 
 app.listen(port, () => {

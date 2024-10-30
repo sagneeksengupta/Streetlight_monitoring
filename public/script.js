@@ -1,7 +1,7 @@
 const statusElement = document.getElementById('status');
-const sensor1Element = document.getElementById('Light Sensor');
-const sensor2Element = document.getElementById('Current Sensor');
-const sensor3Element = document.getElementById('Voltage Sensor');
+const sensor1Element = document.getElementById('sensor1');
+const sensor2Element = document.getElementById('sensor2');
+const sensor3Element = document.getElementById('sensor3');
 
 function updateStatus(message) {
     statusElement.textContent = message;
